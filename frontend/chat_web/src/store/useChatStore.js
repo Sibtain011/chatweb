@@ -24,25 +24,25 @@ export const useChatStore = create((set, get) => ({
   },
 
   // Get messages between users
-  getMessages: async (userId) => {
-    try {
-      set({ isMessagesLoading: true });
+  // getMessages: async (userId) => {
+  //   try {
+  //     set({ isMessagesLoading: true });
 
-      const res = await axiosInstance.get(`/messages/${userId}`);
+  //     const res = await axiosInstance.get(`/messages/${userId}`);
 
-      set({
-        messages: Array.isArray(res.data)
-          ? res.data
-          : res.data.messages || [],
-      });
+  //     set({
+  //       messages: Array.isArray(res.data)
+  //         ? res.data
+  //         : res.data.messages || [],
+  //     });
 
-    } catch (error) {
-      console.error("Error fetching messages:", error);
-      set({ messages: [] });
-    } finally {
-      set({ isMessagesLoading: false });
-    }
-  },
+  //   } catch (error) {
+  //     console.error("Error fetching messages:", error);
+  //     set({ messages: [] });
+  //   } finally {
+  //     set({ isMessagesLoading: false });
+  //   }
+  // },
 
   // Send message
   sendMessage: async (messageData) => {
