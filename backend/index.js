@@ -29,15 +29,6 @@ app.use(
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
-if (process.env.NODE_ENV === "production") {
-  // Frontend lives at ../frontend/chat_web (Vite build output: dist/)
-  app.use(express.static(path.join(__dirname, "../frontend/chat_web/dist")));
-
-  app.use((req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/chat_web/dist/index.html"));
-});
-}
-
 server.listen(PORT, async () => {
   console.log("server is running on PORT:" + PORT);
   await connectDB();
