@@ -26,8 +26,8 @@ app.use(
   })
 );
 
-app.use("https://chatweb-sgxq.onrender.com/api/auth", authRoutes);
-app.use("https://chatweb-sgxq.onrender.com/api/messages", messageRoutes);
+app.use("/api/auth", authRoutes);
+app.use("/api/messages", messageRoutes);
 
 if (process.env.NODE_ENV === "production") {
   // Frontend lives at ../frontend/chat_web (Vite build output: dist/)
