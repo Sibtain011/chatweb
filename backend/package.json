@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "node index.js",
     "start": "node index.js",
-    "seed": "node seeds/user.seed.js"
+    "seed": "node seeds/user.seed.js",
+    "build": "echo build step not required"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
