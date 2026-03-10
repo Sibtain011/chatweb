@@ -21,13 +21,13 @@ app.use(
   cors({
     // In dev, allow whatever Vite port is used (5173, 5174, etc).
     // With credentials=true, `origin: true` will reflect the request origin.
-    origin: process.env.NODE_ENV === "production" ? "http://localhost:5173" : true,
+    origin: process.env.NODE_ENV === "production" ? "https://chatweb-omega-sand.vercel.app" : true,
     credentials: true,
   })
 );
 
-app.use("/api/auth", authRoutes);
-app.use("/api/messages", messageRoutes);
+app.use("https://chatweb-sgxq.onrender.com/api/auth", authRoutes);
+app.use("https://chatweb-sgxq.onrender.com/api/messages", messageRoutes);
 
 if (process.env.NODE_ENV === "production") {
   // Frontend lives at ../frontend/chat_web (Vite build output: dist/)
